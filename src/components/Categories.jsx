@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MensOutwear from "./MensOutwear";
 import LadiesOutwear from './LadiesOutwear';
 import MensTshirt from './MensTshirt';
@@ -6,18 +6,19 @@ import LadiesTshirt from './LadiesTshirt';
 import Navigator from "./Navigator";
 import { Route, Routes, useParams } from 'react-router-dom';
 
-function Categories() {
+function Categories({cartItemCount, setCartItemCount, cartItems, setCartItems}) {
     const {category} = useParams();
+
     console.log(category);
     let shoppingCategory;
     if(category === "mens_outerwear")
-        shoppingCategory = <MensOutwear/>;
+        shoppingCategory = <MensOutwear cartItemCount={cartItemCount}  setCartItemCount={setCartItemCount} cartItems={cartItems} setCartItems={setCartItems}/>;
     else if(category === "ladies_outerwear")
-        shoppingCategory = <LadiesOutwear/>;
+        shoppingCategory = <LadiesOutwear cartItemCount={cartItemCount} setCartItemCount={setCartItemCount} cartItems={cartItems} setCartItems={setCartItems}/>;
     else if(category === "mens_tshirts")
-        shoppingCategory = <MensTshirt/>;
+        shoppingCategory = <MensTshirt cartItemCount={cartItemCount}  setCartItemCount={setCartItemCount} cartItems={cartItems} setCartItems={setCartItems}/>;
     else if(category === "ladies_tshirts")
-        shoppingCategory = <LadiesTshirt/>;
+        shoppingCategory = <LadiesTshirt cartItemCount={cartItemCount}  setCartItemCount={setCartItemCount} cartItems={cartItems} setCartItems={setCartItems}/>;
     return (
         <div>
             {/* <Navigator/> */}

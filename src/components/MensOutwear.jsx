@@ -1,7 +1,17 @@
 import React from "react";
 import mensOutwear from "../data/mensOutwear";
 
-function MensOutwear() {
+function MensOutwear({cartItemCount, setCartItemCount, cartItems, setCartItems}) {
+    function incrementCartCount() {
+        setCartItemCount(cartItemCount + 1);
+        // setCartItems(prevArray => [...prevArray, {name}]);
+    }
+
+    function addItemsToCart(item) {
+        setCartItems([...cartItems, {item}]);
+        console.log(cartItems);
+    }
+
     return (
         <div className="main">
             <img src={`https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg`} alt="" />
@@ -11,11 +21,11 @@ function MensOutwear() {
                     mensOutwear.map((mw) => {
                         console.log(mw);
                        return ( 
-                       <div className="mensOuterWearCard">
+                       <div className="mensOuterWearCard" key={mw.name}>
                             <img src={`https://shop.polymer-project.org/esm-bundled/${mw.image}`} alt="" />
                             <h3>{mw.title}</h3>
                             <p>${mw.price}</p>
-                            <button>Add To Cart</button>
+                            <button className="cartBtn" onClick={() => { incrementCartCount(); addItemsToCart(mw); }}>Add To Cart</button>
                         </div>);
                     })
                 }
