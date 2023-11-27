@@ -1,34 +1,54 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 .heading {
+  color: black;
   text-align: center;
   letter-spacing: 0.4rem;
+  cursor: pointer;
+}
+
+h2,
+h3 {
+  text-align: center;
+  font-weight: 300;
 }
 
 .home-container {
-  width: 100vw;
+  text-align: center;
 }
 
-.home-img {
-  width: 50vw;
+.home-img-outerwears {
+  margin: 0 10vw;
 }
 
-.home-imgs-div {
+.home-tshirt-img {
+  height: 25vh;
+  width: 39vw;
+}
+
+.home-imgs-tshirts {
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  margin: 0 8vw 0 10.5vw;
+}
+
+.shop-btn {
+  padding: 0.5rem 3rem;
+  background-color: white;
+  cursor: pointer;
+  margin-bottom: 3vh;
 }
 
 .cartImg {
@@ -43,12 +63,12 @@ code {
 .cartCountPara {
   position: absolute;
   font-size: 0.75rem;
-  top :0.25vh;
+  top: 0.25vh;
   right: 1.5vw;
   color: white;
   background-color: black;
   border-radius: 1rem;
-  padding: 0.20rem 0.4rem;
+  padding: 0.2rem 0.4rem;
 }
 
 .navigationBtns {
@@ -57,8 +77,14 @@ code {
 
 .categoryBtns {
   background-color: white;
-  padding: 1rem 2rem;
+  margin: 1.5rem 1.5rem;
   border: none;
+  cursor: pointer;
+}
+
+.categoryBtns:focus {
+  border-bottom: 2px solid black;
+  padding-bottom: 0.6rem;
 }
 
 .main > img {
@@ -70,7 +96,10 @@ code {
   text-align: center;
 }
 
-.mensOuterWearContainer, .ladiesOuterwearContainer, .mensTshirtContainer, .ladiesTshirtContainer {
+.mensOuterWearContainer,
+.ladiesOuterwearContainer,
+.mensTshirtContainer,
+.ladiesTshirtContainer {
   margin: auto;
   padding: 2vh 5vw;
   display: flex;
@@ -78,7 +107,10 @@ code {
   flex-wrap: wrap;
 }
 
-.mensOuterWearCard, .ladiesOuterwearCard, .mensTshirtCard, .ladiesTshirtCard {
+.mensOuterWearCard,
+.ladiesOuterwearCard,
+.mensTshirtCard,
+.ladiesTshirtCard {
   width: 25vw;
   margin: auto;
   padding: 2vh 2vw;
@@ -93,5 +125,5 @@ code {
 .cartBtn {
   padding: 0.5rem 3rem;
   background-color: white;
-  /* border: none; */
+  cursor: pointer;
 }
