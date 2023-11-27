@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Home from './components/Home';
+import Categories from './components/Categories';
+import ShoppingCart from './components/ShoppingCart';
+import { Link, Route, Routes } from 'react-router-dom';
+import Navigator from './components/Navigator';
+import { IoMdCart } from "react-icons/io";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h2 className="heading">SHOP</h2>
+        <Link to={'/cart'}><IoMdCart className='cartImg'/></Link>
       </header>
+      <Navigator/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/list/:category' element={<Categories/>}/>
+        <Route path='/cart' element={<ShoppingCart/>}/>
+      </Routes>
     </div>
   );
 }
